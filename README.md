@@ -8,6 +8,7 @@ Docker image with:
 * [WSO2 Identity Server](https://wso2.com/identity-and-access-management) 
 
 Current versions of components:
+* OpenJDK [**8u171**](https://buildd.debian.org/status/logs.php?pkg=openjdk-8)
 * WSO2 Identity Server: [**5.5.0**](https://github.com/wso2/product-is/releases/tag/v5.5.0)
 
 How to build:
@@ -19,7 +20,7 @@ $ docker build -t binakot/wso2-is .
 How to run:
 
 ```bash
-$ docker run -d --name wso2-is binakot/wso2-is
+$ docker run -d --name wso2-is -p 9443:9433 binakot/wso2-is
 ```
 
 ## Endpoints
