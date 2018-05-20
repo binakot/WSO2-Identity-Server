@@ -20,11 +20,9 @@ $ docker build -t binakot/wso2-is .
 How to run:
 
 ```bash
-$ docker run -d --name wso2-is -p 9443:9433 binakot/wso2-is
+$ docker run -d --name wso2-is -p 9443:9443 binakot/wso2-is
 ```
 
 ## Endpoints
 
-* [Carbon dashboard](https://localhost:9443/carbon)
-
-* [User dashboard](https://localhost:9443/dashboard)
+* [Dashboard](https://localhost:9443)

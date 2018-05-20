@@ -13,10 +13,11 @@ RUN set -ex \
     && wget -P /opt --user-agent="docker" --referer="http://connect.wso2.com/wso2/getform/reg/new_product_download" \
         http://product-dist.wso2.com/products/identity-server/${WSO2_IS_VERSION}/wso2is-${WSO2_IS_VERSION}.zip \
     && echo "${WSO2_IS_SHA256} /opt/wso2is-${WSO2_IS_VERSION}.zip" | sha256sum -c - \
+    && apt-get update && apt-get install -y zip && apt-get clean \
     && unzip /opt/wso2is-${WSO2_IS_VERSION}.zip -d /opt \
-    && rm /opt/wso2is-${WSO2_IS_VERSION}.zip
+    && rm /opt/wso2is-${WSO2_IS_VERSION}.zip \
+    && mv /opt/wso2is-${WSO2_IS_VERSION} /opt/wso2is
 
-RUN mv /opt/wso2is-${WSO2_IS_VERSION} /opt/wso2is
 ADD ./setup.sh /opt
 RUN chmod +x /opt/setup.sh && ./opt/setup.sh
 
