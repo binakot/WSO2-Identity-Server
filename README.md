@@ -14,13 +14,13 @@ Current versions of components:
 How to build:
 
 ```bash
-$ docker build -t binakot/wso2-is .
+$ docker build -t binakot/wso2-identity-server .
 ```
 
 How to run:
 
 ```bash
-$ docker run -d --name wso2-is -p 9443:9443 binakot/wso2-is
+$ docker run -d --name wso2is -p 9443:9443 binakot/wso2-identity-server
 ```
 
 ## Endpoints
