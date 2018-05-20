@@ -19,7 +19,8 @@ RUN set -ex \
     && mv /opt/wso2is-${WSO2_IS_VERSION} /opt/wso2is
 
 ADD ./setup.sh /opt
-RUN chmod +x /opt/setup.sh && ./opt/setup.sh
+RUN chmod +x /opt/setup.sh
+RUN /opt/setup.sh
 
 # https://docs.wso2.com/display/IS550/Default+Ports+of+WSO2+Products
 EXPOSE 9443 9763 8000 10500
